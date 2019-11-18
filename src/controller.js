@@ -103,3 +103,31 @@ exports.updateTransactionStatus = function (req, res) {
 		}
 	});
 };
+
+exports.deleteRatingReview = function (req, res) {
+	let transaction_id = req.params.transaction_id;
+
+	connection.query('UPDATE transactions_history SET userRate = NULL, userReview = NULL WHERE transactionID = ?', [transaction_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res);
+		}
+	});
+};
+
+exports.deleteTransaction = function (req, res) {
+	let user_id = req.body.user_id;
+	let movie_id = req.body.movie_id;
+	let date = req.body.date;
+	let time = req.body.time;
+	let seat = req.body.seat;
+
+	connection.query('DELETE FROM transactions_history WHERE userID = ? AND movie_id = ? AND historyDate = ? AND historyTime = ? AND seatNumber = ?', [status, user_id, movie_id, date, time, seat], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res);
+		}
+	});
+};

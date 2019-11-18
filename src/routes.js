@@ -26,4 +26,10 @@ module.exports = function (app) {
 
 	app.route('/web_service_transactions')
 		.put(todoList.updateTransactionStatus);
+
+	app.route('/web_service_transactions/transaction_id/:transaction_id')
+		.delete(todoList.deleteRatingReview);
+
+	app.route('/web_service_transactions')
+		.delete(todoList.deleteTransaction);
 };
