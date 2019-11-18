@@ -11,11 +11,11 @@ exports.getRatingReview = function (req, res) {
 	let movie_id = req.params.movie_id;
 
 	connection.query("SELECT * FROM transactions_history WHERE movieID = ? AND status = 'Success'", [movie_id], function(error, rows, fields) {
-        if (error) {
-            console.log(error);
-        } else {
-            response.ok(rows, res);
-        }
+		if (error) {
+			console.log(error);
+		} else {
+			response.ok(rows, res);
+		}
     });
 };
 
@@ -49,6 +49,19 @@ exports.addTransaction = function (req, res) {
 			console.log(error)
 		} else {
 			response.ok(rows, res)
+		}
+	});
+};
+
+exports.updateTransactionStatus = function (req, res) {
+	let transaction_id = req.body.transaction_id;
+	let status = req.body.status;
+
+	connection.query('UPDATE transactions_history SET status = ? WHERE transactionID = ?', [status, transaction_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res);
 		}
 	});
 };
