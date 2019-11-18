@@ -33,6 +33,30 @@ exports.getSeat = function (req, res) {
 	});
 };
 
+exports.getTransaction = function (req, res) {
+	let transaction_id = req.params.transaction_id;
+
+	connection.query('SELECT * FROM transactions_history WHERE transactionID = ?', [transaction_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res)
+		}
+	});
+};
+
+exports.getUserTransactions = function (req, res) {
+	let user_id = req.params.user_id;
+
+	connection.query('SELECT * FROM transactions_history WHERE userID = ?', [user_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res)
+		}
+	});
+};
+
 exports.addTransaction = function (req, res) {
 	let user_id = req.body.user_id;
 	let account_number = req.body.account_number;
@@ -49,6 +73,20 @@ exports.addTransaction = function (req, res) {
 			console.log(error)
 		} else {
 			response.ok(rows, res)
+		}
+	});
+};
+
+exports.updateRatingReview = function (req, res) {
+	let rating = req.body.rating;
+	let review = req.body.review;
+	let transaction_id = req.params.transaction_id;
+
+	connection.query('UPDATE transactions_history SET userRate = ?, userReview = ? WHERE transactionID = ?', [rating, review, transaction_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res);
 		}
 	});
 };
