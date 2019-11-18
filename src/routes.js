@@ -21,6 +21,9 @@ module.exports = function (app) {
 	app.route('/web_service_transactions')
 		.post(todoList.addTransaction);
 
+	app.route('/web_service_transactions/transaction_id/:transaction_id')
+		.put(todoList.updateRatingReview);
+
 	app.route('/web_service_transactions')
 		.put(todoList.updateTransactionStatus);
 };

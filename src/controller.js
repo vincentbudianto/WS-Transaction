@@ -77,6 +77,20 @@ exports.addTransaction = function (req, res) {
 	});
 };
 
+exports.updateRatingReview = function (req, res) {
+	let rating = req.body.rating;
+	let review = req.body.review;
+	let transaction_id = req.params.transaction_id;
+
+	connection.query('UPDATE transactions_history SET userRate = ?, userReview = ? WHERE transactionID = ?', [rating, review, transaction_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res);
+		}
+	});
+};
+
 exports.updateTransactionStatus = function (req, res) {
 	let transaction_id = req.body.transaction_id;
 	let status = req.body.status;
