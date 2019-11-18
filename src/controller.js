@@ -104,6 +104,18 @@ exports.updateTransactionStatus = function (req, res) {
 	});
 };
 
+exports.deleteRatingReview = function (req, res) {
+	let transaction_id = req.params.transaction_id;
+
+	connection.query('UPDATE transactions_history SET userRate = NULL, userReview = NULL WHERE transactionID = ?', [transaction_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res);
+		}
+	});
+};
+
 exports.deleteTransaction = function (req, res) {
 	let user_id = req.body.user_id;
 	let movie_id = req.body.movie_id;
