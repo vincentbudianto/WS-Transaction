@@ -8,4 +8,7 @@ module.exports = function (app) {
 
 	app.route('/web_service_transactions/movie_id/:movie_id')
 		.get(todoList.getRatingReview);
+
+	app.route('/web_service_transactions')
+		.post(todoList.addTransaction);
 };
