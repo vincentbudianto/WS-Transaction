@@ -33,6 +33,18 @@ exports.getSeat = function (req, res) {
 	});
 };
 
+exports.getUserTransactions = function (req, res) {
+	let user_id = req.params.user_id;
+
+	connection.query('SELECT * FROM transactions_history WHERE userID = ?', [user_id], function (error, rows, fields) {
+		if (error) {
+			console.log(error)
+		} else {
+			response.ok(rows, res)
+		}
+	});
+};
+
 exports.addTransaction = function (req, res) {
 	let user_id = req.body.user_id;
 	let account_number = req.body.account_number;
