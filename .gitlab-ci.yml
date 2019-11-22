@@ -8,7 +8,7 @@ before_script:
 
 stages:
   - test
-  # - deploy
+  - deploy
 
 # lint and test are two different jobs in the same stage.
 # This allows us to run these two in parallel and making build faster
@@ -19,10 +19,10 @@ lint:
   script:
     - npm run lint
 
-# deployToAWS:
-#   only:
-#     # - master
-#     - developer
-#   stage: deploy
-#   script:
-#     - bash deploy.sh
+deployToAWS:
+  only:
+    # - master
+    - developer
+  stage: deploy
+  script:
+    - bash deploy.sh
