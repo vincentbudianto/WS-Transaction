@@ -36,9 +36,14 @@ Beberapa dependencies tambahan yang dibutuhkan oleh aplikasi Bank Pro:
 ```npm install --save mysql```
 
 Cara menjalankan:
-ketikan ```node server.js``` pada direktori src web service transaksi
 
-<br>
+| local                                                                 |
+|:---------------------------------------------------------------------:|
+| ketikan ```node server.js``` pada direktori src web service transaksi |
+
+| AWS EC2                                                               |
+|:---------------------------------------------------------------------:|
+| ketikan ```http://18.207.202.246:3500/``` pada web browser            |
 
 ## Basis Data Web Service
 ![](screenshots/database_diagram.png)
@@ -48,6 +53,16 @@ ketikan ```node server.js``` pada direktori src web service transaksi
 | 1     | transactions_history | Relasi yang berisi data transaksi pengguna Engima (terdiri dari id transaksi, id pengguna, nomor akun pengguna, nomor virtual account tujuan, id film, tanggal jadwal film, waktu jadwal film, nomor kursi, harga tiket, rating pengguna, review pengguna, status transaksi dan waktu pemesanan tiket) |
 
 * Status sebuah transaksi tiket dikategorikan sebagai berikut:<br>1. Pending​: tiket belum dibayar namun belum lewat dari masa berlaku transaksi.<br>2. Cancelled​: tiket belum dibayar dan sudah lewat dari masa berlaku transaksi. Kursi yang dipesan pada transaksi dengan status ​cancelled menjadi tersedia kembali.<br>3. Success​: tiket sudah dibayar sebelum masa berlaku transaksi.
+
+<br>
+
+## Pembagian Tugas
+
+### CI/CD
+| Number | Feature                | Assignment |
+|:------:|:-----------------------|:-----------|
+| 1.     | Linting                | 13517137   |
+| 2.     | Deployment to AWS EC2  | 13517137   |
 
 <p align="center">
     <b>
