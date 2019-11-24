@@ -1,7 +1,7 @@
 <h1 align="center">
     <b>
         <br>
-        # Tugas Besar 2 IF3110 Pengembangan Aplikasi Berbasis Web
+        # Tugas Besar 2 IF3110 Pengembangan Aplikasi Berbasis Web / IF3159 Dasar Pembangunan Perangakat Lunak
         <br>
     </b>
 </h1>
@@ -38,19 +38,19 @@ Beberapa dependencies tambahan yang dibutuhkan oleh aplikasi Bank Pro:
 Cara menjalankan:
 
 | local                                                                 |
-|:---------------------------------------------------------------------:|
+|:----------------------------------------------------------------------|
 | ketikan ```node server.js``` pada direktori src web service transaksi |
 
 | AWS EC2                                                               |
-|:---------------------------------------------------------------------:|
+|:----------------------------------------------------------------------|
 | ketikan ```http://18.207.202.246:3500/``` pada web browser            |
 
 ## Basis Data Web Service
 ![](screenshots/database_diagram.png)
 
-| Nomor | Relasi               | Penjelasan                                                                       |
-|:-----:|:---------------------|:---------------------------------------------------------------------------------|
-| 1     | transactions_history | Relasi yang berisi data transaksi pengguna Engima (terdiri dari id transaksi, id pengguna, nomor akun pengguna, nomor virtual account tujuan, id film, tanggal jadwal film, waktu jadwal film, nomor kursi, harga tiket, rating pengguna, review pengguna, status transaksi dan waktu pemesanan tiket) |
+| Nomor | Relasi               | Penjelasan                                                                        |
+|:-----:|:---------------------|:----------------------------------------------------------------------------------|
+| 1     | transactions_history | Relasi yang berisi data transaksi pengguna Engima (terdiri dari id transaksi, id pengguna, nomor akun pengguna, nomor virtual account tujuan, id film, tanggal jadwal film, waktu jadwal film, nomor kursi, harga tiket, rating pengguna, review pengguna, status transaksi dan waktu pemesanan tiket)                  |
 
 * Status sebuah transaksi tiket dikategorikan sebagai berikut:<br>1. Pending​: tiket belum dibayar namun belum lewat dari masa berlaku transaksi.<br>2. Cancelled​: tiket belum dibayar dan sudah lewat dari masa berlaku transaksi. Kursi yang dipesan pada transaksi dengan status ​cancelled menjadi tersedia kembali.<br>3. Success​: tiket sudah dibayar sebelum masa berlaku transaksi.
 
