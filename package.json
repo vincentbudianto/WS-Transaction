@@ -1,0 +1,29 @@
+{
+  "name": "web_service_transaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentbudianto/WS-Transaction.git"
+  },
+  "author": "vincent VB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincentbudianto/WS-Transaction/issues"
+  },
+  "homepage": "https://github.com/vincentbudianto/WS-Transaction#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0"
+  }
+}
