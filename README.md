@@ -43,7 +43,7 @@ Cara menjalankan:
 
 | AWS EC2                                                               |
 |:----------------------------------------------------------------------|
-| ketikan ```http://18.207.202.246:3500/``` pada web browser            |
+| ketikan ```http://3.83.91.13:3500/``` pada web browser                |
 
 ## Basis Data Web Service
 ![](screenshots/database_diagram.png)
